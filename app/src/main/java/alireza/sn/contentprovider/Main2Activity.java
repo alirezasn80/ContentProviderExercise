@@ -1,39 +1,28 @@
 package alireza.sn.contentprovider;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
-import android.app.Activity;
 import android.app.LoaderManager;
 import android.content.ContentProviderOperation;
-import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.CursorLoader;
-import android.content.Intent;
 import android.content.Loader;
 import android.content.OperationApplicationException;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
-import android.graphics.Color;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.provider.ContactsContract;
-import android.text.Layout;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Random;
 
-public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
+public class Main2Activity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
     TextView textView;
     EditText textViewChange;
     Button button;
@@ -53,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main2);
 
         // init views ==============================================================================
         textViewChange = findViewById(R.id.textview_change);
@@ -74,9 +63,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             public void onClick(View v) {
 
                 if (isCreated) {
-                    getLoaderManager().restartLoader(1, null, MainActivity.this);
+                    getLoaderManager().restartLoader(1, null, Main2Activity.this);
                 } else {
-                    getLoaderManager().initLoader(1, null, MainActivity.this);
+                    getLoaderManager().initLoader(1, null, Main2Activity.this);
                     isCreated = true;
                 }
 
